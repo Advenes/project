@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 ?>
 
 <body>
-    <a href="index.php"><div class="header"><ht><div class="textup">FIRMA</div></ht></a>
+<a href="index.php"><div class="header"><ht><div class="textup">FIRMA</div></ht></a>
     <div class="formtop"><form action="index_search.php" method="POST" style="margin:0px;display:inline-block"><input type="text" name="searchbar" class="inputtop" placeholder="wyszukaj...">
     <input type="submit" value="search" style="width:60px; font-size:16px; background-color: rgb(0, 69, 90); height:37px"></form></div>
     <div class="username" style="font-size: 20px; margin-top: 30px; padding-left:100px;">Użytkownik: <?php echo($username)?></div>
@@ -30,13 +30,14 @@
 
     <div class="all">
 
-        <div class="sctitle">Wszystkie oferty naszego sklepu</div>
+        <div class="sctitle">Wyniki wyszukiwania:</div>
       
         <div class="oferty">  
 
         <?php
+        $searchbar = $_POST["searchbar"];
 
-        $sql = "SELECT id, zdj1, nazwa, opis, telefon, stan, cena from oferty";
+        $sql = "SELECT id, zdj1, nazwa, opis, telefon, stan, cena from oferty where nazwa like '%$searchbar%'";
         $result = $conn-> query($sql);
 
         if($result-> num_rows > 0){
@@ -52,7 +53,7 @@
             }
         }
         else{
-            echo "no results";
+            echo "";
         }
 
         $conn-> close();
@@ -62,6 +63,3 @@
         </div>
 
     </div>
-
-</body>
-</html>

@@ -31,6 +31,14 @@ a{
     height: 100%;
 
 }
+.allphoto{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+}
 .textup{
     margin-top: 12px;
 }
@@ -43,7 +51,11 @@ a{
     background-color: rgb(0, 69, 90);
 }
 .formtop{
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: column;
 }
 ht{
     text-decoration: none;
@@ -73,6 +85,7 @@ button{
     align-items: column;
     width: 1000px;
     height: 100%;
+    font-family: "Nunito Sans", sans-serif;
 }
 
 .oferta{
@@ -243,6 +256,16 @@ input::-webkit-inner-spin-button{
     position: relative;
     overflow: hidden;
     margin: auto;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+.carousel-notscalable {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 .carousel-inner {
     display: flex;
@@ -282,4 +305,8 @@ input::-webkit-inner-spin-button{
 
 .carousel-control-next {
     right: 10px;
+}
+.ilosc-inpt{
+    background-color: rgb(0, 58, 76);
+    
 }
